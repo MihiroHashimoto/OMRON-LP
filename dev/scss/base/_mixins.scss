@@ -1,9 +1,9 @@
 // メディアクエリー
 @mixin mq($size) {
 
-$sp: 768px;
-$tablet: 910px;
-$pc: 1280px;
+$sp: 751px;
+// $tablet: 996px;
+$pc: 996px;
 	@if $size == "sp" {
 		@media only screen and (max-width: $sp - 1) {@content;}
 	}
