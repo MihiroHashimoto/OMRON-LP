@@ -43,3 +43,9 @@ img {
 		display: none;
 	}
 }
+body {
+	@include mq(tablet) {
+		width: 995px;
+		margin: 0 auto;
+	}
+}

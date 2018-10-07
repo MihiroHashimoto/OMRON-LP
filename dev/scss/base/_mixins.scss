@@ -65,7 +65,7 @@ $pc: 996px;
 }
 
 // ボーダー
-@mixin bd($position: null, $color: rgba(color(light_pink), 1), $height: 1px, $style: solid) {
+@mixin bd($position: null, $color: rgba(color(base_white), 1), $height: 1px, $style: solid) {
 
 $value: $color $height $style;// 値の代入
 	@if type-of($position) == string{

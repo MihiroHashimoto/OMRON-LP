@@ -1,0 +1,93 @@
+.section {
+	$root: &;
+	// 奇数番目に共通
+
+	&:nth-child(odd) {
+		background-color: color(assort_yellow);
+		#{$root} {
+			&BadgeTxt {
+				span {
+					color: color(base_white);
+				}
+			}
+			&Ttl {
+				color: color(base_white);
+			}
+		}
+	}
+	// 偶数番目に共通
+	&:nth-child(even) {
+		background-color: color(base_white);
+		#{$root} {
+			&Badge span {
+				border-color: color(light_blue);
+				// span {
+				// 	color: color(light_blue);
+				// }
+			}
+			&Ttl {
+				color: color(light_blue);
+			}
+		}
+	}
+	// 全部に共通
+	&Badge {
+		width: 60%;
+		padding: 10%;
+		margin: 0 auto 20px;
+		span {
+			@include bd($height: 3px);
+			padding: 20%;
+			display: table;
+			margin: 0 auto;
+			border-radius: 50%;
+			&::after {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				white-space: pre;
+			}
+		}
+	}
+	// お悩みのコンテンツ分、ボタンのテキスト生成
+	@for $value from 1 through 6 {
+		&BadgeTxt#{$value} {
+			&::after {
+				content: "お悩み \A 0#{$value}";
+			}
+		}
+	}
+		// @include bd($height: 3px);
+		// display: table;
+		// @include mq(sp) {
+		// 	width: 25%;
+		// 	border-radius: 50%;
+		// 	margin: 0 auto 15px;
+		// }
+		// &Txt {
+		// 	display: table-cell;
+		// 	vertical-align: middle;
+		// 	width: 85%;
+		// 	margin: 0 auto;
+		// }
+	&Thumb {
+		@include mq(sp) {
+			width: 80%;
+			margin: 0 auto 15px;
+		}
+	}
+	&Ttl {
+		@include mq(sp) {
+			text-align: center;
+			font-size: 2rem;
+		}
+		@include mq(nonSp) {
+			font-size: 3rem;
+		}
+	}
+	&Txt {
+		@include mq(sp) {
+			font-size: fz_base(15);
+		}
+	}
+}

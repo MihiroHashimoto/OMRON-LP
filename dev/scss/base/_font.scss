@@ -30,13 +30,13 @@ html {
 	font-weight: 400;
 	line-height: 1.7;
 
-	@include mq(sp) {
-		letter-spacing: ls(sp_l);
-		line-height: lh(sp_m);
-	}
-	@include mq(nonSp) {
-		font-size: fz(pc_m);
-		letter-spacing: ls(pc_l);
-		line-height: lh(pc_m);
-	}
+	// @include mq(sp) {
+	// 	letter-spacing: ;
+	// 	line-height: ;
+	// }
+	// @include mq(nonSp) {
+	// 	font-size: fz(pc_m);
+	// 	letter-spacing: ;
+	// 	line-height: ;
+	// }
 }
