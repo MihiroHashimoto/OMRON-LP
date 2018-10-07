@@ -1,0 +1,35 @@
+.header {
+	padding-top: 20px;
+	&Logo {
+		width: 20%;
+		max-width: 100px;
+		margin: 0 auto 15px;
+	}
+	&Main {
+		width: 80%;
+		margin: 0 auto 65%;
+		text-align: center;
+	}
+	&Ttl {
+		margin-bottom: 15px;
+	}
+	&Txt {
+		line-height: 1.5;
+	}
+	&Menu {
+		position: relative;
+		&::after {
+			content: "";
+			background: url(../images/sp/ttl_img_sp.png) no-repeat center;
+			background-size: contain;
+			width: 0;
+			height: 0;
+			padding: 30%;
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+}
