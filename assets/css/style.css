@@ -665,10 +665,180 @@ img {
 }
 
 .help {
-  color: #FFFFFF;
+  text-align: center;
+  padding: 10% 0;
 }
-.help [class^="help"] {
-  color: inherit;
+.helpMark {
+  width: 70%;
+  margin-left: 7.5%;
+}
+.helpTtl {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: .075em;
+  margin-bottom: 7%;
+}
+.helpItem {
+  padding: 15% 0;
+  position: relative;
+}
+.helpItem:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: "";
+  background: linear-gradient(to right, #61c5cc 8px, transparent 8px);
+  background-size: 13px 4px;
+}
+.helpItem:last-child:after {
+  background: none;
+}
+.helpHead {
+  margin: 0 auto;
+}
+.helpHead.icon {
+  width: 30%;
+  margin-bottom: 5%;
+}
+.helpHead.thumb {
+  width: 80%;
+  margin-bottom: 8%;
+}
+.helpBody, .helpFoot {
+  width: 85%;
+  margin: 0 auto;
+}
+.helpAttention {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1%;
+}
+.helpTxt {
+  font-size: 1.5rem;
+}
+.helpFoot {
+  margin-top: 13%;
+}
+.helpFoot .helpTxt {
+  margin-bottom: 4%;
+}
+.helpBtn {
+  display: block;
+  width: 96%;
+  max-width: 380px;
+  font-weight: 500;
+  border-radius: 100px;
+  -webkit-box-shadow: 5px 4px #E18C32;
+          box-shadow: 5px 4px #E18C32;
+}
+@media only screen and (max-width: 750px) {
+  .helpBtn {
+    font-size: 1.8rem;
+  }
+}
+.helpBtn a {
+  display: block;
+  text-align: center;
+  padding: 4% 0 4% 8%;
+  color: #FFFFFF;
+  font-weight: 400;
+  position: relative;
+}
+@media only screen and (max-width: 320px) {
+  .helpBtn a {
+    font-size: 1.4rem;
+    padding-left: 12%;
+  }
+}
+
+.topic {
+  padding-top: 10%;
+}
+@media only screen and (max-width: 750px) {
+  .topic {
+    text-align: center;
+  }
+}
+.topicList {
+  position: relative;
+  width: 90%;
+  margin: 20% auto 0;
+}
+.topicList:before {
+  position: absolute;
+  content: "";
+  padding: 25%;
+  left: 0;
+  background: transparent url("../images/oshirase_ttl.svg") left top no-repeat;
+}
+@media only screen and (max-width: 750px) {
+  .topicList:before {
+    top: -7.5%;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .topicItem {
+    overflow: hidden;
+  }
+  .topicItem:first-child {
+    width: 58%;
+    float: left;
+  }
+  .topicItem:nth-child(2) {
+    width: 48%;
+    float: right;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .topicItem {
+    position: relative;
+    padding-bottom: 13%;
+  }
+  .topicItem:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: "";
+    background: linear-gradient(to right, #FFFFFF 6px, transparent 6px);
+    background-size: 13px 2px;
+  }
+  .topicItem:nth-child(2) {
+    padding-bottom: 0;
+  }
+  .topicItem:nth-child(2):after {
+    background: none;
+  }
+  .topicItem:nth-child(2) .topicHead {
+    margin-top: 20%;
+  }
+  .topicItem:nth-child(2) .topicThumb {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .topicItem:nth-child(2) .topicTxt {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .topicHead {
+    margin: 0 auto 5%;
+  }
+}
+.topicTtl {
+  width: 85%;
+  margin: 0 auto 5%;
+  font-size: 3rem;
+  letter-spacing: .1em;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.topicTxt {
+  margin-bottom: 8%;
+  font-size: 1.6rem;
 }
 
 .header {
@@ -953,6 +1123,19 @@ img {
   width: 88%;
   max-width: 995px;
   margin: 0 auto;
+}
+
+.boxCol2 {
+  width: 90%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 750px) {
+  .boxCol2Inner {
+    margin-bottom: 13%;
+  }
+}
+.boxCol2Inner:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,3 +3,15 @@
 	max-width: 995px;
 	margin: 0 auto;
 }
+.boxCol2 {
+	width: 90%;
+	margin: 0 auto;
+	&Inner {
+		@include mq(sp) {
+			margin-bottom: 13%;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

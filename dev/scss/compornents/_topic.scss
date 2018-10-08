@@ -1,0 +1,84 @@
+.topic {
+	$root: &;
+	padding-top: 10%;
+	@include mq(sp) {
+		text-align: center;
+	}
+	&List {
+		position: relative;
+		width: 90%;
+		margin: 20% auto 0;
+		&:before {
+			position: absolute;
+			content: "";
+			padding: 25%;
+			left: 0;
+			background:transparent url("../images/oshirase_ttl.svg") left top no-repeat;
+			@include mq(sp) {
+				top: -7.5%;
+			}
+		}
+	}
+	&Item {
+		@include mq(nonSp) {
+			overflow: hidden;
+			&:first-child {
+				width: 58%;
+				float: left;
+			}
+			&:nth-child(2) {
+				width: 48%;
+				float: right;
+			}
+		}
+		@include mq(sp) {
+			position: relative;
+			padding-bottom: 13%;
+			&:after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				content: "";
+				background: linear-gradient(to right, color(base_white) 6px, transparent 6px);
+			    background-size: 13px 2px;
+			}
+			&:nth-child(2) {
+				padding-bottom: 0;
+				&:after {
+					background: none;
+				}
+				#{$root} {
+					&Head {
+						margin-top: 20%;
+					}
+					&Thumb {
+						width: 75%;
+						margin: 0 auto;
+					}
+					&Txt {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	&Head {
+		@include mq(sp) {
+			margin: 0 auto 5%;
+		}
+	}
+	&Ttl {
+		width: 85%;
+		margin: 0 auto 5%;
+		font-size: fz_base(30);
+		letter-spacing: .1em;
+		font-weight: 500;
+		line-height: 1.3;
+	}
+	&Txt {
+		margin-bottom: 8%;
+		font-size: fz_base(16);
+	}
+}
