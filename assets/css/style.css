@@ -816,7 +816,7 @@ img {
     margin-top: 20%;
   }
   .topicItem:nth-child(2) .topicThumb {
-    width: 75%;
+    width: 65%;
     margin: 0 auto;
   }
   .topicItem:nth-child(2) .topicTxt {
@@ -948,6 +948,36 @@ img {
 .headerTrriger {
   display: block;
   padding: 10% 8%;
+}
+
+.footer {
+  padding: 30px 0 10px;
+}
+.footerDescription {
+  width: 90%;
+  margin: 0 auto 60px;
+  padding: 15px 13px;
+  border: rgba(0, 0, 0, 0.7) 1px solid;
+}
+.footerDescriptionTxt {
+  text-decoration: underline;
+  margin-left: 10px;
+}
+.footerFoot {
+  margin: 90%;
+  margin: 0 auto;
+}
+.footerIconList {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.footerIcon {
+  display: inline-block;
+  margin: 0 18px;
+}
+.footerCopyright {
+  text-align: center;
 }
 
 .section {
