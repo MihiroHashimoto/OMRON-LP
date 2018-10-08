@@ -1,7 +1,7 @@
 .section {
 	$root: &;
+	padding: 0 0 10%;
 	// 奇数番目に共通
-
 	&:nth-child(odd) {
 		background-color: color(assort_yellow);
 		#{$root} {
@@ -13,6 +13,17 @@
 			&Ttl {
 				color: color(base_white);
 			}
+			&Foot {
+				box-shadow: 5px 4px color(shadow_yellow);
+				a {
+					&:before {
+						background-color: rgba(#000, .8);
+					}
+					&:after {
+						@include bd(left, $color: rgba(#000, .8), $height: 4px);
+					}
+				}
+			}
 		}
 	}
 	// 偶数番目に共通
@@ -21,12 +32,22 @@
 		#{$root} {
 			&Badge span {
 				border-color: color(light_blue);
-				// span {
-				// 	color: color(light_blue);
-				// }
 			}
 			&Ttl {
 				color: color(light_blue);
+			}
+			&Foot {
+				background-color: color(accent_blue);
+				box-shadow: 5px 4px color(shadow_blue);
+				a {
+					color: color(base_white);
+					&:before {
+						background-color: color(base_white);
+					}
+					&:after {
+						@include bd(left, $color: color(base_white), $height: 4px);
+					}
+				}
 			}
 		}
 	}
@@ -34,8 +55,9 @@
 	&Badge {
 		width: 60%;
 		padding: 10%;
-		margin: 0 auto 20px;
+		margin: 0 auto;
 		span {
+			font-size: fz_base(20);
 			@include bd($height: 3px);
 			padding: 20%;
 			display: table;
@@ -57,19 +79,6 @@
 			}
 		}
 	}
-		// @include bd($height: 3px);
-		// display: table;
-		// @include mq(sp) {
-		// 	width: 25%;
-		// 	border-radius: 50%;
-		// 	margin: 0 auto 15px;
-		// }
-		// &Txt {
-		// 	display: table-cell;
-		// 	vertical-align: middle;
-		// 	width: 85%;
-		// 	margin: 0 auto;
-		// }
 	&Thumb {
 		@include mq(sp) {
 			width: 80%;
@@ -79,15 +88,69 @@
 	&Ttl {
 		@include mq(sp) {
 			text-align: center;
-			font-size: 2rem;
+			font-size: fz_base(28);
+			font-weight: 400;
+			line-height: 1.3;
+			margin-bottom: 15px;
 		}
 		@include mq(nonSp) {
-			font-size: 3rem;
+			font-size: fz_base(34);
 		}
 	}
 	&Txt {
 		@include mq(sp) {
 			font-size: fz_base(15);
+			margin-bottom: 20px;
+		}
+	}
+	&Foot {
+		display: block;
+		width: 96%;
+		max-width: 380px;
+		font-weight: 500;
+		border-radius: 100px;
+		background-color: color(base_white);
+		@include mq(sp) {
+			font-size: fz_base(18);
+		}
+		a {
+			display: block;
+			text-align: left;
+			padding: 4% 0 4% 8%;
+			color: rgba(#000, .7);
+			font-weight: 400;
+			position: relative;
+			@media only screen and (max-width: 320px) {
+				font-size: fz_base(14);
+				padding-left: 12%;
+			}
+			&:before {
+				position: absolute;
+				top: 50%;
+				right: 10%;
+				transform: translate(0, -50%);
+				display: block;
+				content: "";
+				width: 12px;
+				height: 2px;
+				@media only screen and (max-width: 320px) {
+					right: 13%;
+				}
+			}
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 7.5%;
+				transform: translate(0, -50%);
+				display: block;
+				content: "";
+				width: 0;
+				height: 0;
+				@include bd($color: transparent, $height: 4px);
+				@media only screen and (max-width: 320px) {
+					right: 10.5%;
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,6 @@
+.help {
+	color: color(base_white);
+	[class^="help"] {
+		color: inherit;
+	}
+}

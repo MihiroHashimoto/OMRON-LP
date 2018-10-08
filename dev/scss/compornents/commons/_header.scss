@@ -15,9 +15,11 @@
 	}
 	&Txt {
 		line-height: 1.5;
+		font-size: fz_base(14);
 	}
 	&Menu {
 		position: relative;
+		padding: 8% 0 10%;
 		&::after {
 			content: "";
 			background: url(../images/sp/ttl_img_sp.png) no-repeat center;
@@ -31,5 +33,71 @@
 			right: 0;
 			margin: 0 auto;
 		}
+		&Ttl {
+			font-size: fz_base(26);
+			font-weight: 500;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+	&List {
+		overflow: hidden;
+		padding-bottom: 3px;
+	}
+	&Btn {
+		display: inline-block;
+		width: 47%;
+		margin-bottom: 20px;
+		background-color: color(base_white);
+		box-shadow: 3px 3px;
+		font-size: fz_base(20);
+		font-weight: 500;
+		position: relative;
+		@include bd($color: #000);
+		@media only screen and (max-width: 320px) {
+			font-size: fz_base(15);
+		}
+		&:nth-child(odd) {
+			margin-right: 4%;
+		}
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+		&:nth-last-child(2), &:last-child {
+			margin-bottom: 0;
+		}
+		&::before {
+			display: block;
+			content: "";
+			background-color: color(thin_yellow);
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translate(0, -50%);
+			border-radius: 50%;
+		}
+		&::after {
+			display: block;
+			content: "";
+			width: 0;
+			height: 0;
+			@include bd($color: transparent, $height: 5px);
+			@include bd(top, #000, 9px);
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			transform: translate(0, -25%);
+		}
+		&Txt {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 1.4;
+		}
+	}
+	&Trriger {
+		display: block;
+		padding: 10% 8%;
 	}
 }
