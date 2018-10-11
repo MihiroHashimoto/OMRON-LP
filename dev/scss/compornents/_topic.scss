@@ -14,6 +14,9 @@
 			padding: 25%;
 			left: 0;
 			background:transparent url("../images/oshirase_ttl.svg") left top no-repeat;
+			@include mq(nonSp) {
+				overflow: hidden;
+			}
 			@include mq(sp) {
 				top: -7.5%;
 			}
@@ -21,7 +24,6 @@
 	}
 	&Item {
 		@include mq(nonSp) {
-			overflow: hidden;
 			&:first-child {
 				width: 58%;
 				float: left;

@@ -2,6 +2,12 @@
 	width: 88%;
 	max-width: 995px;
 	margin: 0 auto;
+	@include mq(tablet) {
+		margin: 0;
+	}
+	@include mq(nonSp) {
+		width: 76%;
+	}
 }
 .boxCol2 {
 	width: 90%;

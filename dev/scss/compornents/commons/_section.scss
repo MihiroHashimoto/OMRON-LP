@@ -1,13 +1,28 @@
 .section {
 	$root: &;
 	padding: 0 0 10%;
+	@include mq(nonSp) {
+		padding-bottom: 3%;
+	}
 	// 奇数番目に共通
 	&:nth-child(odd) {
 		background-color: color(assort_yellow);
 		#{$root} {
-			&BadgeTxt {
+			&Badge {
 				span {
 					color: color(base_white);
+				}
+			}
+			&Thumb {
+				@include mq(nonSp) {
+					float: left;
+					transform: translateY(30px);
+				}
+			}
+			&Body {
+				@include mq(nonSp) {
+					float: right;
+					transform: translateX(40px);
 				}
 			}
 			&Ttl {
@@ -15,6 +30,10 @@
 			}
 			&Foot {
 				box-shadow: 5px 4px color(shadow_yellow);
+				@include mq(nonSp) {
+					float: right;
+					transform: translateX(70px);
+				}
 				a {
 					&:before {
 						background-color: rgba(#000, .8);
@@ -30,15 +49,31 @@
 	&:nth-child(even) {
 		background-color: color(base_white);
 		#{$root} {
-			&Badge span {
-				border-color: color(light_blue);
+			&Badge {
+				span {
+					border-color: color(accent_blue);
+					color: color(accent_blue);
+				}
+			}
+			&Thumb {
+				@include mq(nonSp) {
+					float: right;
+				}
+			}
+			&Body {
+				@include mq(nonSp) {
+					float: left;
+				}
 			}
 			&Ttl {
-				color: color(light_blue);
+				color: color(accent_blue);
 			}
 			&Foot {
 				background-color: color(accent_blue);
 				box-shadow: 5px 4px color(shadow_blue);
+				@include mq(nonSp) {
+					float: left;
+				}
 				a {
 					color: color(base_white);
 					&:before {
@@ -51,15 +86,51 @@
 			}
 		}
 	}
+	// 1番目のsectionのthumb
+	&:first-child {
+		@include mq(nonSp) {
+			#{$root} {
+				&Thumb {
+					width: 55%;
+					transform: translateY(50px);
+				}
+			}
+		}
+	}
+	// ２番目のsectionのfoot
+	&:nth-child(3) {
+		@include mq(nonSp) {
+			#{$root} {
+				&Foot {
+					transform: translateX(40px);
+				}
+			}
+		}
+	}
 	// 全部に共通
+	&Inner {
+		position: relative;
+		padding-top: 40%;
+		@include mq(nonSp) {
+			padding-top: 11%;
+			&:after {
+				display: block;
+				content: "";
+				clear: both;
+			}
+		}
+
+	}
 	&Badge {
-		width: 60%;
-		padding: 10%;
+		position: absolute;
+		top: 5%;
+		left: 0;
+		right: 0;
 		margin: 0 auto;
 		span {
 			font-size: fz_base(20);
-			@include bd($height: 3px);
-			padding: 20%;
+			@include bd($height: 4px);
+			padding: 5%;
 			display: table;
 			margin: 0 auto;
 			border-radius: 50%;
@@ -69,6 +140,12 @@
 				text-align: center;
 				white-space: pre;
 			}
+			@include mq(nonSp) {
+				padding: 3%;
+			}
+		}
+		@include mq(nonSp) {
+			top: 10%;
 		}
 	}
 	// お悩みのコンテンツ分、ボタンのテキスト生成
@@ -83,6 +160,16 @@
 		@include mq(sp) {
 			width: 80%;
 			margin: 0 auto 15px;
+		}
+		@include mq(nonSp) {
+			width: 45%;
+			padding-bottom: 60px;
+		}
+	}
+	&Body {
+		@include mq(nonSp) {
+			text-align: left;
+			margin-bottom: 20px;
 		}
 	}
 	&Ttl {
@@ -102,6 +189,10 @@
 			font-size: fz_base(15);
 			margin-bottom: 20px;
 		}
+		@include mq(nonSp) {
+			font-size: fz_base(14);
+			margin-bottom: 20px;
+		}
 	}
 	&Foot {
 		display: block;
@@ -113,6 +204,9 @@
 		@include mq(sp) {
 			font-size: fz_base(18);
 		}
+		@include mq(nonSp) {
+			width: 45%;
+		}
 		a {
 			display: block;
 			text-align: left;
@@ -123,6 +217,10 @@
 			@media only screen and (max-width: 320px) {
 				font-size: fz_base(14);
 				padding-left: 12%;
+			}
+			@include mq(nonSp) {
+				padding: 7% 11%;
+				font-size: fz_base(14);
 			}
 			&:before {
 				position: absolute;

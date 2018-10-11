@@ -773,15 +773,17 @@ img {
   left: 0;
   background: transparent url("../images/oshirase_ttl.svg") left top no-repeat;
 }
+@media only screen and (min-width: 751px) {
+  .topicList:before {
+    overflow: hidden;
+  }
+}
 @media only screen and (max-width: 750px) {
   .topicList:before {
     top: -7.5%;
   }
 }
 @media only screen and (min-width: 751px) {
-  .topicItem {
-    overflow: hidden;
-  }
   .topicItem:first-child {
     width: 58%;
     float: left;
@@ -878,6 +880,11 @@ img {
   right: 0;
   margin: 0 auto;
 }
+@media only screen and (min-width: 751px) {
+  .headerMenu::after {
+    padding: 5% 0;
+  }
+}
 .headerMenuTtl {
   font-size: 2.6rem;
   font-weight: 500;
@@ -908,11 +915,23 @@ img {
 .headerBtn:nth-child(odd) {
   margin-right: 4%;
 }
+@media only screen and (min-width: 751px) {
+  .headerBtn:nth-child(odd) {
+    margin-right: 1.1%;
+  }
+}
 .headerBtn:nth-child(even) {
   margin-right: 0;
 }
-.headerBtn:nth-last-child(2), .headerBtn:last-child {
-  margin-bottom: 0;
+@media only screen and (min-width: 751px) {
+  .headerBtn:nth-child(even) {
+    margin-right: 1.1%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .headerBtn:nth-last-child(2), .headerBtn:last-child {
+    margin-bottom: 0;
+  }
 }
 .headerBtn::before {
   display: block;
@@ -940,6 +959,11 @@ img {
   -webkit-transform: translate(0, -25%);
           transform: translate(0, -25%);
 }
+@media only screen and (min-width: 751px) {
+  .headerBtn {
+    width: 32%;
+  }
+}
 .headerBtnTxt {
   display: inline-block;
   vertical-align: middle;
@@ -965,7 +989,7 @@ img {
 }
 .footerFoot {
   margin: 90%;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 .footerIconList {
   width: 50%;
@@ -983,11 +1007,30 @@ img {
 .section {
   padding: 0 0 10%;
 }
+@media only screen and (min-width: 751px) {
+  .section {
+    padding-bottom: 3%;
+  }
+}
 .section:nth-child(odd) {
   background-color: #ffbd50;
 }
-.section:nth-child(odd) .sectionBadgeTxt span {
+.section:nth-child(odd) .sectionBadge span {
   color: #FFFFFF;
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(odd) .sectionThumb {
+    float: left;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(odd) .sectionBody {
+    float: right;
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+  }
 }
 .section:nth-child(odd) .sectionTtl {
   color: #FFFFFF;
@@ -995,6 +1038,13 @@ img {
 .section:nth-child(odd) .sectionFoot {
   -webkit-box-shadow: 5px 4px #E18C32;
           box-shadow: 5px 4px #E18C32;
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(odd) .sectionFoot {
+    float: right;
+    -webkit-transform: translateX(70px);
+            transform: translateX(70px);
+  }
 }
 .section:nth-child(odd) .sectionFoot a:before {
   background-color: rgba(0, 0, 0, 0.8);
@@ -1006,15 +1056,31 @@ img {
   background-color: #FFFFFF;
 }
 .section:nth-child(even) .sectionBadge span {
-  border-color: #61c5cc;
+  border-color: #5cbde7;
+  color: #5cbde7;
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(even) .sectionThumb {
+    float: right;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(even) .sectionBody {
+    float: left;
+  }
 }
 .section:nth-child(even) .sectionTtl {
-  color: #61c5cc;
+  color: #5cbde7;
 }
 .section:nth-child(even) .sectionFoot {
   background-color: #5cbde7;
   -webkit-box-shadow: 5px 4px #2798c0;
           box-shadow: 5px 4px #2798c0;
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(even) .sectionFoot {
+    float: left;
+  }
 }
 .section:nth-child(even) .sectionFoot a {
   color: #FFFFFF;
@@ -1025,15 +1091,44 @@ img {
 .section:nth-child(even) .sectionFoot a:after {
   border-left: #FFFFFF 4px solid;
 }
+@media only screen and (min-width: 751px) {
+  .section:first-child .sectionThumb {
+    width: 55%;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+}
+@media only screen and (min-width: 751px) {
+  .section:nth-child(3) .sectionFoot {
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+  }
+}
+.sectionInner {
+  position: relative;
+  padding-top: 40%;
+}
+@media only screen and (min-width: 751px) {
+  .sectionInner {
+    padding-top: 11%;
+  }
+  .sectionInner:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
 .sectionBadge {
-  width: 60%;
-  padding: 10%;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
   margin: 0 auto;
 }
 .sectionBadge span {
   font-size: 2rem;
-  border: white 3px solid;
-  padding: 20%;
+  border: white 4px solid;
+  padding: 5%;
   display: table;
   margin: 0 auto;
   border-radius: 50%;
@@ -1043,6 +1138,16 @@ img {
   vertical-align: middle;
   text-align: center;
   white-space: pre;
+}
+@media only screen and (min-width: 751px) {
+  .sectionBadge span {
+    padding: 3%;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .sectionBadge {
+    top: 10%;
+  }
 }
 .sectionBadgeTxt1::after {
   content: "お悩み \a 01";
@@ -1068,6 +1173,18 @@ img {
     margin: 0 auto 15px;
   }
 }
+@media only screen and (min-width: 751px) {
+  .sectionThumb {
+    width: 45%;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .sectionBody {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+}
 @media only screen and (max-width: 750px) {
   .sectionTtl {
     text-align: center;
@@ -1088,6 +1205,12 @@ img {
     margin-bottom: 20px;
   }
 }
+@media only screen and (min-width: 751px) {
+  .sectionTxt {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+}
 .sectionFoot {
   display: block;
   width: 96%;
@@ -1099,6 +1222,11 @@ img {
 @media only screen and (max-width: 750px) {
   .sectionFoot {
     font-size: 1.8rem;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .sectionFoot {
+    width: 45%;
   }
 }
 .sectionFoot a {
@@ -1113,6 +1241,12 @@ img {
   .sectionFoot a {
     font-size: 1.4rem;
     padding-left: 12%;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .sectionFoot a {
+    padding: 7% 11%;
+    font-size: 1.4rem;
   }
 }
 .sectionFoot a:before {
@@ -1153,6 +1287,16 @@ img {
   width: 88%;
   max-width: 995px;
   margin: 0 auto;
+}
+@media only screen and (min-width: 751px) and (max-width: 995px) {
+  .l-inner {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 751px) {
+  .l-inner {
+    width: 76%;
+  }
 }
 
 .boxCol2 {
